@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Kemana\Abdn\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Kemana\Abdn\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">kemanaabdnlog</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Kemana\Abdn\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="kemanaabdn_reminderlog_listing_data_source" xsi:type="string">Kemana\Abdn\Model\ResourceModel\ReminderLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Kemana\Abdn\Model\ResourceModel\ReminderLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">kemana_abandonedcart_log</argument>
+            <argument name="resourceModel" xsi:type="string">Kemana\Abdn\Model\ResourceModel\ReminderLog</argument>
+        </arguments>
+    </virtualType>
+</config>

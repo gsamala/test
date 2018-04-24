@@ -1,0 +1,19 @@
+<?php $_items = $this->getItems();?>
+<table style="width: 100%; border-collapse: collapse; background: #fff;">
+	<thead>
+		<tr>
+			<th style="border: 1px solid #000; padding: 5px 8px;">Name</th>
+			<th style="border: 1px solid #000; padding: 5px 8px;">Qty</th>
+			<th style="border: 1px solid #000; padding: 5px 8px;">Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($_items as $_item): ?>	
+			<tr>
+				<td style="border: 1px solid #000; padding: 5px 8px;"><?php echo $_item->getName(); ?></td>
+				<td style="border: 1px solid #000; padding: 5px 8px; text-align: right;"><?php echo $_item->getQty(); ?></td>
+				<td style="border: 1px solid #000; padding: 5px 8px; text-align: right;"><?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($_item->getPrice(),true,false); ?></td>
+			</tr>
+		<?php endforeach;?>
+	</tbody>
+</table>

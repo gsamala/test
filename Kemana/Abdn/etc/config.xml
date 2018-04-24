@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <kemanaabdn>
+            <general>
+                <enable>1</enable>
+                <max_number_email>2</max_number_email>
+                <reminder_time>2</reminder_time>
+                <unit>1</unit>
+            </general>
+            <email>
+            	<sender_name>Kemana</sender_name>
+            	<sender_email>support@kemana.com</sender_email>
+                <subject>Abandoned Cart</subject>
+            	<email_template>kemanaabdn_email_email_template</email_template>
+            </email>
+        </kemanaabdn>
+    </default>
+</config>

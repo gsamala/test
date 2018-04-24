@@ -1,0 +1,43 @@
+<!--@subject {{var subject}} @-->
+<body style="width: 700px; margin: 0 auto; padding: 20px; ">
+	<table style="width: 100%; border-collapse: collapse; background: #e0ebeb; border: 1px solid #5a8c8c; ">
+		<tr>
+			<td style="padding:0 20px">
+				<h3 style="margin:15px 0; "">Hello, {{var name}}</h3>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:0 20px">
+				<p style="margin:15px 0; ">Thank you for visiting our website.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:0 20px">
+				<p style="margin:15px 0; ">It seems you left the following items in your cart.
+			    	<br>
+			    	Complete your order before it’s gone!
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:0 20px">
+				{{layout area="frontend" handle="abandoned_cart_items" items=$items}}
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:0 20px">
+				<p style="margin:15px 0; ">You can follow this link to view your shopping cart detail and finish your checkout.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:0 20px">
+				<a href="{{var url}}" style="padding:15px; display:inline-block; background: #adad85; color: #000; text-decoration:none; margin: 10px 0; ">Shopping Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding:0 20px">
+				<p style="text-align: center; margin:15px 0; ">Thank you, <strong>{{var store.getFrontendName()}}</strong></p>
+			</td>
+		</tr>
+	</table>
+</body>
